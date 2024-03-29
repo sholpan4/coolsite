@@ -3,7 +3,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.contrib import messages
+
 
 from .forms import *
 from .models import *
@@ -76,6 +78,7 @@ class AddPage(LoginRequiredMixin, DataMixin, CreateView):
 
 def contact(request):
     return HttpResponse("Обратная связь")
+
 
 def login(request):
     return HttpResponse("Авторизация")
